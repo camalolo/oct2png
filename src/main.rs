@@ -10,12 +10,12 @@ fn main() {
     if args.contains(&"--help".into()) {
         println!("oct2png - Decode base64-encoded PNG data from stdin and save to a file");
         println!();
-        println!("Usage: echo <tool_output> | oct2png <output_file>.png");
+        println!("Usage: cat <tool_output> | oct2png <output_file>.png");
         process::exit(0);
     }
 
     if args.len() != 2 {
-        eprintln!("Usage: echo <tool_output> | oct2png <output_file>.png");
+        eprintln!("Usage: cat <tool_output> | oct2png <output_file>.png");
         process::exit(1);
     }
 
