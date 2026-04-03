@@ -6,8 +6,16 @@ use std::process;
 
 fn main() {
     let args: Vec<String> = env::args().collect();
+
+    if args.contains(&"--help".into()) {
+        println!("oct2png - Decode base64-encoded PNG data from stdin and save to a file");
+        println!();
+        println!("Usage: echo '<data>base64,<base64_data>' | oct2png <output_path>");
+        process::exit(0);
+    }
+
     if args.len() != 2 {
-        eprintln!("Usage: oct2png <output_path>");
+        eprintln!("Usage: echo '<data>base64,<base64_data>' | oct2png <output_path>");
         process::exit(1);
     }
 
